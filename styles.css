@@ -1,0 +1,136 @@
+* {
+    margin: 0; /* Remove margens padrão de todos os elementos */
+    padding: 0; /* Remove padding padrão de todos os elementos */
+    box-sizing: border-box; /* Inclui padding e bordas na largura e altura dos elementos */
+}
+
+body {
+    color: white;
+    background: url('https://i.imgur.com/fSrJtUq.png') no-repeat center center fixed; /* Imagem de fundo */
+    background-size: cover; /* Faz a imagem cobrir todo o fundo */
+    font-family: Arial, sans-serif;
+    height: 100vh; /* Define a altura total da viewport */
+}
+
+.header {
+    border-bottom: solid 2px rgb(237, 3, 3);
+    padding: 20px;
+    font-size: 48px; /* Aumenta o tamanho da fonte */
+    color: rgb(237, 3, 3);
+    text-align: center;
+    font-family: 'Montserrat', sans-serif; /* Aplica a nova fonte */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adiciona sombra ao texto */
+}
+
+.loading-bar {
+    width: 100%;
+    height: 3px; /* Altura da barra menor */
+    background: rgb(237, 3, 3);
+    animation: loading 4s linear infinite; /* Animação suave */
+}
+
+@keyframes loading {
+    0% {
+        transform: translateX(-100%); /* Começa fora da tela */
+    }
+    50% {
+        transform: translateX(100%); /* Move para fora da tela na direita */
+    }
+    100% {
+        transform: translateX(-100%); /* Retorna para fora da tela na esquerda */
+    }
+}
+
+section {
+    padding: 80px 20px; /* Adiciona padding superior e inferior */
+    display: flex;
+    justify-content: center;
+    flex-direction: column; /* Para empilhar conteúdo verticalmente */
+    align-items: center; /* Centraliza o conteúdo */
+    width: 100%; /* Garante que a seção ocupe toda a largura */
+}
+
+.video-section {
+    margin-bottom: 40px; /* Espaço entre seções */
+}
+
+.video-info h1 {
+    margin-bottom: 20px; /* Espaço abaixo do título */
+}
+
+.biography {
+    background: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente */
+    padding: 40px 20px;
+    border-radius: 10px; /* Bordas arredondadas */
+    margin: 40px 0; /* Margem em cima e embaixo */
+    text-align: center; /* Centraliza o texto */
+    font-family: 'Roboto', sans-serif; /* Aplica a nova fonte */
+}
+
+.biography h2 {
+    font-size: 36px; /* Tamanho do título */
+    margin-bottom: 20px; /* Espaço abaixo do título */
+    color: rgb(237, 3, 3);
+}
+
+.biography p {
+    font-size: 20px; /* Aumenta o tamanho do texto */
+    line-height: 1.6; /* Aumenta o espaçamento entre linhas */
+    color: white; /* Cor do texto */
+}
+
+.video-container {
+    margin: 20px auto;
+}
+
+.thumbnail-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.thumbnail-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.thumbnail-container a {
+    margin: 10px;
+}
+
+.thumbnail-container img {
+    width: 200px; /* Aumenta a largura das miniaturas */
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s; /* Adiciona transição para a sombra */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra ao redor da imagem */
+}
+
+.thumbnail-container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7); /* Aumenta a sombra ao passar o mouse */
+}
+
+/* Estilos para o rodapé */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+}
+
+footer h3 {
+    color: white; /* Cor do texto do rodapé */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .thumbnail-container img {
+        width: 150px; /* Reduz a largura das miniaturas em telas menores */
+    }
+    .header {
+        font-size: 36px; /* Reduz o tamanho da fonte do cabeçalho */
+    }
+    .biography p {
+        font-size: 18px; /* Reduz o tamanho do texto na biografia em telas menores */
+    }
+}
